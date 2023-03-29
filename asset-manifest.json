@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/inforce_task/static/css/main.073c9b0a.css",
+    "main.js": "/inforce_task/static/js/main.44ed4edf.js",
+    "index.html": "/inforce_task/index.html",
+    "main.073c9b0a.css.map": "/inforce_task/static/css/main.073c9b0a.css.map",
+    "main.44ed4edf.js.map": "/inforce_task/static/js/main.44ed4edf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.44ed4edf.js"
+  ]
+}
