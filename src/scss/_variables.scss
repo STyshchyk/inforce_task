@@ -1,0 +1,11 @@
+@mixin for-size($size) {
+  @if $size == sm {
+    @media (max-width: 480px) { @content; }
+  } @else if $size == md {
+    @media (max-width: 720px) { @content; }
+  } @else if $size == lg {
+    @media (min-width: 721px) { @content; }
+  }
+}
+$main-color: #4CAF50;
+$main-color-darker: #326f35;
