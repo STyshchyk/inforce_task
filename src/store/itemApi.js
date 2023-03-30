@@ -20,6 +20,11 @@ export const itemApi = createApi({
                 : [{type: 'Products', id: 'LIST'}],
 
         }),
+        getItem: build.query({
+            query: (id = "") => ({
+                url: `product/${id}`
+            }),
+        }),
         addProduct: build.mutation({
             query: (body) => ({
                 url: `product`,
@@ -40,5 +45,5 @@ export const itemApi = createApi({
 
 })
 
-export const {useGetGoodsQuery, useAddProductMutation, useDeleteProductMutation} = itemApi;
+export const {useGetGoodsQuery, useAddProductMutation, useDeleteProductMutation, useGetItemQuery} = itemApi;
 
