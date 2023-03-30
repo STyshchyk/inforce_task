@@ -1,5 +1,4 @@
 import '../App.scss';
-import React, {useEffect} from "react";
 import {useGetGoodsQuery, useAddProductMutation, useDeleteProductMutation} from "../store/itemApi";
 import MyModal from "../Components/MyModal/MyModal";
 import Form from "../Components/Form";
@@ -7,12 +6,12 @@ import CardList from "../Components/CardList";
 import MyButton from "../Components/MyButton/MyButton";
 
 function App() {
-    const {data = [], isLoading} = useGetGoodsQuery("product", {
+    const {data = [], isError} = useGetGoodsQuery("product", {
         selectFromResult: ({data = []}) => ({
             data: [...data].sort((a, b) => a.name.localeCompare(b.name)),
         }),
     })
-    const [addProduct, {isError}] = useAddProductMutation();
+    const [addProduct] = useAddProductMutation();
     const [deleteProduct] = useDeleteProductMutation();
     const [isVisible, setIsVisible] = React.useState(false)
     const handeAddProduct = async (newValues) => {
@@ -26,7 +25,8 @@ function App() {
     const handleDeleteProduct = async (e, id) => {
         e.stopPropagation();
         e.preventDefault();
-        await deleteProduct(id).unwrap()
+        if (! window.confirm("Confrim deliting product"))return;
+               await deleteProduct(id).unwrap()
     }
 
 
@@ -48,7 +48,7 @@ function App() {
         }
         await handeAddProduct(newValues);
     }
-
+    if(isError)return  <p>error loading</p>
     return (
         <div className="App">
             <div className={"main-page"}>

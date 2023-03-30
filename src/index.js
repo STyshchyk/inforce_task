@@ -5,6 +5,7 @@ import App from './Pages/App';
 import {createHashRouter, RouterProvider} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./store/store";
+import Product from "./Pages/Product";
 
 const router = createHashRouter([
     {
@@ -14,7 +15,7 @@ const router = createHashRouter([
     },
     {
         path: "product/:id",
-        element: <p>Hello</p>,
+        element: <Product/>,
         errorElement: <h1> Error card</h1>
     },
 ]);
