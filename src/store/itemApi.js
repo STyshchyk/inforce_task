@@ -5,7 +5,7 @@ export const itemApi = createApi({
     tagTypes: ["Products"],
     baseQuery: fetchBaseQuery(
         {
-            baseUrl: "http://localhost:3001/"
+            baseUrl: "https://64258f5f7ac292e3cf0421e1.mockapi.io/inforce_test"
         }),
     endpoints: (build) => ({
         getGoods: build.query({
@@ -22,12 +22,12 @@ export const itemApi = createApi({
         }),
         getItem: build.query({
             query: (id = "") => ({
-                url: `product/${id}`
+                url: `/${id}`
             }),
         }),
         addProduct: build.mutation({
             query: (body) => ({
-                url: `product`,
+                url: ``,
                 method: "POST",
                 body
             }),
@@ -35,7 +35,7 @@ export const itemApi = createApi({
         }),
         deleteProduct: build.mutation({
             query: (id) => ({
-                url: `product/${id}`,
+                url: `/${id}`,
                 method: "DELETE",
             }),
             invalidatesTags: [{type: 'Products', id: 'LIST'}],

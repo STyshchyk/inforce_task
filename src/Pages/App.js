@@ -7,7 +7,7 @@ import CardList from "../Components/CardList";
 import MyButton from "../Components/MyButton/MyButton";
 
 function App() {
-    const {data = [], isError} = useGetGoodsQuery("product", {
+    const {data = [], isError} = useGetGoodsQuery("", {
         selectFromResult: ({data = []}) => ({
             data: [...data].sort((a, b) => a.name.localeCompare(b.name)),
         }),
