@@ -1,0 +1,114 @@
+@import "variables";
+
+.char-page {
+  max-width: 413px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  .char-img {
+    margin-top: 76px;
+    max-width: calc(320px);
+    aspect-ratio: 1 / 1;
+    padding: 0 10px;
+
+    @include for-size(md) {
+      margin-top: 45px;
+      max-width: calc(225px);
+    }
+    @include for-size(sm) {
+      margin-top: 124px;
+      max-width: calc(150px);
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+    padding: 0 10px;
+
+    @include for-size(md) {
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 38px;
+      text-align: center;
+    }
+    @include for-size(sm) {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+
+  h4 {
+    margin-top: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    @include for-size(md) {
+      width: 100%;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+  }
+
+  .char-info {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px 20px;
+    @include for-size(md) {
+      padding: 0 32px 20px;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 24px;
+      border-bottom: 1px solid gray;
+      padding: 10px 40px 10px 0;
+
+      :first-child {
+        font-weight: 900;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.navigate {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  left: 50px;
+  top: 20px;
+  font-family: 'Karla', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  cursor: pointer;
+  @include for-size(md) {
+    left: 12px;
+  }
+}
