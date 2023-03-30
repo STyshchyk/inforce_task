@@ -1,6 +1,6 @@
 import React from 'react';
 import MyButton from "./MyButton/MyButton";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const Card = (props) => {
@@ -19,11 +19,9 @@ const Card = (props) => {
                 onClick={
                     (e) => {
                         e.stopPropagation();
-                    }
-                }
+                    }}
             >
                 <div className={"card-item"}
-
                 >
                     <div className={"card-img"}>
                         <img src={imageUrl}
@@ -35,12 +33,10 @@ const Card = (props) => {
                         <p>{name}</p>
                     </div>
                     <MyButton
-                        onClick={
-                            (e) => {
-                                handleDelete(e, id)
-                                e.stopPropagation();
-                            }
-                        }
+                        onClick={(e) => {
+                            handleDelete(e, id)
+                            e.stopPropagation();
+                        }}
                     >
                         Delete item
                     </MyButton>

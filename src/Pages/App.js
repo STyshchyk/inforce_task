@@ -26,10 +26,9 @@ function App() {
     const handleDeleteProduct = async (e, id) => {
         e.stopPropagation();
         e.preventDefault();
-        if (! window.confirm("Confrim deliting product"))return;
+        if (! window.confirm("Confrim deleting product"))return;
                await deleteProduct(id).unwrap()
     }
-
 
     const handleForm = async (value) => {
         if (value.name === undefined

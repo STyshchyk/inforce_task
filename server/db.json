@@ -13,16 +13,27 @@
       "id": 3
     },
     {
-      "name": "sdas",
+      "name": "asdasd",
       "imageUrl": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
       "count": 3,
       "size": {
-        "width": 3,
-        "height": 3
+        "width": null,
+        "height": null
       },
-      "weight": "7",
       "comments": null,
-      "id": 4
+      "id": 5
+    },
+    {
+      "name": "Lenovo",
+      "imageUrl": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+      "count": 5,
+      "size": {
+        "width": 5,
+        "height": 4
+      },
+      "weight": "8",
+      "comments": null,
+      "id": 6
     }
   ],
   "comments": [
