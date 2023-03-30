@@ -1,14 +1,14 @@
-import './App.scss';
+import '../App.scss';
 import React, {useEffect} from "react";
-import {useGetGoodsQuery, useAddProductMutation, useDeleteProductMutation} from "./store/itemApi";
-import MyModal from "./Components/MyModal/MyModal";
-import Form from "./Components/Form";
-import CardList from "./Components/CardList";
-import MyButton from "./Components/MyButton/MyButton";
+import {useGetGoodsQuery, useAddProductMutation, useDeleteProductMutation} from "../store/itemApi";
+import MyModal from "../Components/MyModal/MyModal";
+import Form from "../Components/Form";
+import CardList from "../Components/CardList";
+import MyButton from "../Components/MyButton/MyButton";
 
 function App() {
-    const {data = [], isLoading} = useGetGoodsQuery("product" , {
-        selectFromResult: ({ data= [] }) => ({
+    const {data = [], isLoading} = useGetGoodsQuery("product", {
+        selectFromResult: ({data = []}) => ({
             data: [...data].sort((a, b) => a.name.localeCompare(b.name)),
         }),
     })
@@ -16,7 +16,6 @@ function App() {
     const [deleteProduct] = useDeleteProductMutation();
     const [isVisible, setIsVisible] = React.useState(false)
     const handeAddProduct = async (newValues) => {
-        if(newValues.hasOwnProperty("name") && newValues.name !== "")return;
         if (newValues) {
             await addProduct({
                     ...newValues
@@ -24,14 +23,18 @@ function App() {
             ).unwrap();
         }
     }
-    const handleDeleteProduct = async (id) => {
+    const handleDeleteProduct = async (e, id) => {
+        e.stopPropagation();
+        e.preventDefault();
         await deleteProduct(id).unwrap()
     }
-    const handleDelete = (id) => {
-        console.log(id)
-    }
 
-    const handleForm = (value) => {
+
+    const handleForm = async (value) => {
+        if (value.name === undefined
+            || value?.imageUrl === undefined
+            || !value?.imageUrl.includes("http")
+        ) return;
         let newValues = {
             name: value?.name,
             imageUrl: value?.imageUrl,
@@ -43,8 +46,7 @@ function App() {
             weight: value.weight,
             comments: null
         }
-        handeAddProduct(newValues);
-        return newValues;
+        await handeAddProduct(newValues);
     }
 
     return (

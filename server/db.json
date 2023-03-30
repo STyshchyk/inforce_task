@@ -1,58 +1,39 @@
 {
   "product": [
     {
-      "id": 1,
-      "imageUrl": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-      "name": "Iphone X",
-      "count": 4,
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "weight": "200g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ]
-    },
-    {
-      "id": 2,
-      "imageUrl": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-      "name": "Iphone 4",
-      "count": 4,
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "weight": "200g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ]
-    },
-    {
-      "name": "aasd",
+      "name": "Poco",
       "imageUrl": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
-      "count": 10,
+      "count": null,
       "size": {
-        "width": 6,
-        "height": 5
+        "width": null,
+        "height": null
       },
-      "weight": "12",
+      "comments": null,
+      "id": 1
+    },
+    {
+      "name": "Iphone",
+      "imageUrl": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+      "count": 4,
+      "size": {
+        "width": 4,
+        "height": 2
+      },
+      "weight": "3",
+      "comments": null,
+      "id": 2
+    },
+    {
+      "name": "Huawei",
+      "imageUrl": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      "count": 3,
+      "size": {
+        "width": 5,
+        "height": 3
+      },
+      "weight": "4",
       "comments": null,
       "id": 3
-    },
-    {
-      "name": "asdasd",
-      "imageUrl": "https://i.dummyjson.com/data/products/6/thumbnail.png",
-      "count": 4,
-      "size": {
-        "width": 231,
-        "height": 123
-      },
-      "weight": "123",
-      "comments": null,
-      "id": 4
     }
   ],
   "comments": [

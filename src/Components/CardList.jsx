@@ -4,7 +4,7 @@ import Card from "./Card";
 const CardList = ({data, handleDelete}) => {
     return (
         <>
-            {data && data.length > 1 ?
+            {data && data.length >= 1 ?
                 data.map(elem => (
                     <Card
                         key={elem.id}

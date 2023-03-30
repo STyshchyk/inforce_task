@@ -10,6 +10,7 @@ const Form = ({handleForm, closeModal}) => {
     }
 
     const handleSubmit = (event) => {
+
         event.preventDefault();
         handleForm(inputs)
         setInputs({})
@@ -67,7 +68,13 @@ const Form = ({handleForm, closeModal}) => {
                 />
             </label>
 
-            <input type="submit" value={"Post item"} />
+            <input type="submit" value={"Post item"}/>
+            <input type="submit" value={"Cancel"} onClick={
+                () => {
+                    setInputs({})
+                    closeModal(false)
+                }
+            }/>
 
         </form>
     );

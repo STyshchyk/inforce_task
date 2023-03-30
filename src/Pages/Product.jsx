@@ -1,11 +1,12 @@
 import React from 'react';
+import {useParams} from "react-router-dom";
 
 const Product = () => {
     const data = [];
+    const {idCard} = useParams();
+
     return (
-
         <div className={"char-page"}>
-
             <div className="char-img">
                 <img src={data.image} alt="char-img"/>
             </div>

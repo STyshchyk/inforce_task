@@ -1,8 +1,10 @@
 import React from 'react';
 import MyButton from "./MyButton/MyButton";
+import {Link, useParams} from "react-router-dom";
 
 
 const Card = (props) => {
+
     const {
         name,
         imageUrl,
@@ -11,25 +13,40 @@ const Card = (props) => {
         handleDelete
     } = props;
     return (
-        <div
-            className={"card-item"}>
-            <div className={"card-img"}>
-                <img src={imageUrl}
-                     alt="person img"
-                     style={{width: `${size.width}`, height: `${size.height}`}}
-                />
-            </div>
-            <div className={"card-text"}>
-                <p>{name}</p>
-            </div>
-            <MyButton
-                onClick={() => handleDelete(id)}
+        <>
+            <Link
+                to={`/product/${id}`}
+                onClick={
+                    (e) => {
+                        e.stopPropagation();
+                    }
+                }
             >
-                Delete item
-            </MyButton>
+                <div className={"card-item"}
 
-        </div>
-
+                >
+                    <div className={"card-img"}>
+                        <img src={imageUrl}
+                             alt="person img"
+                             style={{width: `${size.width}`, height: `${size.height}`}}
+                        />
+                    </div>
+                    <div className={"card-text"}>
+                        <p>{name}</p>
+                    </div>
+                    <MyButton
+                        onClick={
+                            (e) => {
+                                handleDelete(e, id)
+                                e.stopPropagation();
+                            }
+                        }
+                    >
+                        Delete item
+                    </MyButton>
+                </div>
+            </Link>
+        </>
     );
 };
 
