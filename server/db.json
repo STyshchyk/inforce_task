@@ -1,8 +1,8 @@
 {
   "product": [{
     "id": 1,
-    "imageUrl": "some url here",
-    "name": "Product name",
+    "imageUrl": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+    "name": "Iphone 4",
     "count": 4,
     "size": {
       "width": 200,
@@ -12,8 +12,16 @@
     "comments": ["CommentModel", "CommentModel"]
   },
     {
-      "name": "product",
-      "id": 2
+      "id": 2,
+      "imageUrl": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "name": "Iphone X",
+      "count": 4,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "200g",
+      "comments": ["CommentModel", "CommentModel"]
     }
   ],
   "comments": [
