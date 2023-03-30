@@ -1,4 +1,5 @@
 import '../App.scss';
+import React from "react";
 import {useGetGoodsQuery, useAddProductMutation, useDeleteProductMutation} from "../store/itemApi";
 import MyModal from "../Components/MyModal/MyModal";
 import Form from "../Components/Form";
